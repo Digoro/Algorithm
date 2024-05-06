@@ -1,30 +1,31 @@
 // algorithm: greedy
 // site: https://www.acmicpc.net/problem/16953
 
-let n = [100, 40021];
-let first = +n[0];
-let last = +n[1];
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+// a = 100, b = 40021
+let [a, b] = input[0].split(" ").map(Number)
 let cnt = 0;
-let flag = false;
+let isOk = false;
 
-while(first <= last){
-  if(first == last) {
-    flag = true;
+while(a <= b) {
+  if(a === b) {
+    isOk = true;
     break;
   }
-  if(last%2 == 0) {
-    last = parseInt(last / 2);
+  if(b % 10 === 1) {
+    b = parseInt(b / 10);
     cnt += 1;
-  } else if(last % 10 == 1) {
-    last = parseInt((last-1)/10);
+  } else if(b % 2 === 0) {
+    b = parseInt(b / 2);
     cnt += 1;
   } else {
     break;
   }
 }
 
-if(!flag) {
-  console.log(-1)
+if(isOk) {
+  console.log(cnt+1);
 } else {
-  console.log(cnt + 1);
+  console.log(-1);
 }
