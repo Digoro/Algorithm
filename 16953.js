@@ -2,8 +2,8 @@
 // site: https://www.acmicpc.net/problem/16953
 
 let n = [100, 40021];
-let first = n[0];
-let last = n[1];
+let first = +n[0];
+let last = +n[1];
 let cnt = 0;
 let flag = false;
 
