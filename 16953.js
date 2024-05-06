@@ -1,4 +1,5 @@
-// greedy, baekjoon
+// algorithm: greedy
+// site: https://www.acmicpc.net/problem/16953
 
 let n = [100, 40021];
 let first = n[0];
