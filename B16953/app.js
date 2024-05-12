@@ -1,9 +1,7 @@
 // algorithm: greedy
-// site: https://www.acmicpc.net/problem/16953
 
 let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split('\n');
-// a = 100, b = 40021
+let input = fs.readFileSync(process.platform == 'linux' ? '/dev/stdin' : './input.txt').toString().split('\n');
 let [a, b] = input[0].split(" ").map(Number)
 let cnt = 0;
 let isOk = false;
